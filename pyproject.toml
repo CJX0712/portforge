@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portforge"
+version = "0.1.0"
+description = "PortForge · 世界级投资组合优化系统（马科维茨 / 风险平价 / HRP / 黑利特曼 / PortFuse 凸集成元学习）"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "晨星 (CJX0712)" }]
+keywords = ["portfolio-optimization", "markowitz", "risk-parity", "HRP", "black-litterman", "quant"]
+
+[project.optional-dependencies]
+optional = ["cvxpy>=1.4"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q -W ignore::UserWarning"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "SIM", "RUF"]
+# 中文全角字符（RUF001/002/003）属刻意中文注释/文档，非歧义风险
+ignore = ["SIM108", "RUF009", "UP006", "UP035", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.format]
+quote-style = "double"

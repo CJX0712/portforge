@@ -1,0 +1,8 @@
+# PortForge 运行时锁定依赖（作者：晨星 / CJX0712）
+# 经管隔离 venv 实测安装版本，纯 numpy/scipy/scikit-learn/networkx，零在线权重下载。
+# 安装：python -m venv .venv && .venv/Scripts/pip install -r requirements.lock.txt
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+networkx==3.7
+# 可选（仅 cvxpy 后端时）：cvxpy>=1.4

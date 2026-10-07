@@ -1,0 +1,6 @@
+# PortForge 运行时依赖（Tier-0，全部有 win_amd64 + py3.13 预编译 wheel）
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.5.0
+networkx>=3.0
+# 可选增强（非必需，离线兜底不依赖）：cvxpy>=1.4 —— 用 SOCP 替代 SLSQP 求解 MaxSharpe，更稳定
