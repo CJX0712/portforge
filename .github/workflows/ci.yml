@@ -10,7 +10,8 @@ jobs:
   ci:
     name: lint + pytest + demo
     env:
-      PYTHONPATH: ${{ github.workspace }}
+      # 仓库根本身即包（根有 __init__.py）：import portforge 需要仓库的父目录在 sys.path
+      PYTHONPATH: ${{ github.workspace }}/..
     strategy:
       fail-fast: false
       matrix:
