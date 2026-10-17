@@ -12,6 +12,8 @@ jobs:
     env:
       # 仓库根本身即包（根有 __init__.py）：import portforge 需要仓库的父目录在 sys.path
       PYTHONPATH: ${{ github.workspace }}/..
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
     strategy:
       fail-fast: false
       matrix:
