@@ -27,7 +27,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest ruff
-          pip install -e . || echo "::warning::editable install unavailable"
+          echo "editable install skipped: multiple top-level packages; PYTHONPATH covers imports"
       - name: Ruff lint (hard gate)
         run: |
           ruff check .
